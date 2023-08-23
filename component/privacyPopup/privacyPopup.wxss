@@ -1,0 +1,40 @@
+/* component/privacyPopup/privacyPopup.wxss */
+
+.detail {
+	padding: 20px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.detail .header {
+	font-size: 18px;
+	text-align: center;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+.detail .content {
+	text-align: justify;
+	line-height: 1.5;
+}
+
+.detail .content .p {
+	margin-top: 5px;
+}
+
+.detail .link {
+	color: #586C94;
+}
+
+.detail .button_area {
+	display: flex;
+	margin: 30px auto;
+}
+
+.detail .button_area .item {
+	width: calc(100%/2);
+}
+
+.detail .button_area .item button {
+	width: 80%;
+}

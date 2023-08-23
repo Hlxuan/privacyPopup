@@ -1,0 +1,19 @@
+{
+  "name": "privacy-popup",
+  "version": "1.0.0",
+  "description": "## 前言 微信团队于2023年8月14日发布公告[《关于小程序隐私保护指引设置的公告》](https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&announce_id=11691660367cfUvX&version=&lang=zh_CN&token=)，在小程序内调用与隐私相关的接口或组件，需要先在后台完善和更新《小程序用户隐私保护指引》，完善后需要开发者在小程序弹窗授权，用户同意后方可调用相关接口或组件。",
+  "main": ".cz-config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hlxuan/privacyPopup.git"
+  },
+  "author": "Hlxuan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hlxuan/privacyPopup/issues"
+  },
+  "homepage": "https://github.com/Hlxuan/privacyPopup#readme"
+}

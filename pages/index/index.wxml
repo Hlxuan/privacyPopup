@@ -1,0 +1,4 @@
+<!--pages/index/index.wxml-->
+<privacy-popup bind:agree="agree" bind:disagree="disagree"></privacy-popup>
+
+<image class="img" src="/images/ilangyue.jpg" mode="widthFix" lazy-load show-menu-by-longpress></image>

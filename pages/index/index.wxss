@@ -1,0 +1,4 @@
+/* pages/index/index.wxss */
+.img {
+  width: 100%;
+}
