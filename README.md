@@ -2,7 +2,6 @@
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/Hlxuan/privacyPopup) ![GitHub issues](https://img.shields.io/github/issues/Hlxuan/privacyPopup) ![GitHub Stars](https://img.shields.io/github/stars/Hlxuan/privacyPopup)
 
 
-
 ## 前言
 微信团队于2023年8月14日发布公告[《关于小程序隐私保护指引设置的公告》](https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&announce_id=11691660367cfUvX&version=&lang=zh_CN&token=)，在小程序内调用与隐私相关的接口或组件，需要先在后台完善和更新《小程序用户隐私保护指引》，完善后还需要开发者在小程序内弹窗获取用户授权，用户授权同意后方可调用相关接口或组件。
 
@@ -29,7 +28,7 @@
 
 
 ## License
-[Apache License 2.0](LICENSE)
+[MIT License](LICENSE)
 
 
 ## 支持作者
