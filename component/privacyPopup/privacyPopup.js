@@ -25,7 +25,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    showPop: false, // 显示弹窗（默认关闭）
+    showPrivacy: false, // 显示弹窗（默认关闭）
     miniprogramName: "i朗月", // 小程序的名称
   },
 
@@ -43,12 +43,13 @@ Component({
             console.log("getPrivacySetting success =>", res)
             if (res.needAuthorization) {
               // 需要弹出隐私协议
+              this.popUp()
               this.setData({
-                showPrivacy: true,
                 privacyContractName: res.privacyContractName,
               })
             } else {
               // 用户已经同意过隐私协议，所以不需要再弹出隐私协议，也能调用隐私接口
+
             }
           },
           fail: (err) => {
@@ -98,6 +99,7 @@ Component({
         })
         privacyResolves.clear()
       }
+      this.disPopUp()
     },
 
     // 用户同意
@@ -112,9 +114,23 @@ Component({
         })
       })
       privacyResolves.clear()
-      this.setData({
-        showPrivacy: false,
-      })
+      this.disPopUp()
+    },
+
+    popUp() {
+      if (this.data.showPrivacy === false) {
+        this.setData({
+          showPrivacy: true
+        })
+      }
+    },
+
+    disPopUp() {
+      if (this.data.showPrivacy === true) {
+        this.setData({
+          showPrivacy: false
+        })
+      }
     },
 
   }
