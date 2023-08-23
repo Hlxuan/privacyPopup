@@ -31,11 +31,9 @@ Component({
 
   lifetimes: {
     attached: function () {
-      // 低版本兼容
-      if (wx.onNeedPrivacyAuthorization) {
-        privacyHandler = resolve => {
-          privacyResolves.add(resolve)
-        }
+
+      privacyHandler = resolve => {
+        privacyResolves.add(resolve)
       }
 
       // 低版本兼容
@@ -107,9 +105,11 @@ Component({
       console.log("用户同意隐私授权，相关的接口可以正常使用")
       this.triggerEvent("agree")
       // 告知平台用户已经同意，参数传同意按钮的id。为确保用户有同意的操作，基础库在 resolve 被调用后，会去检查对应的同意按钮有没有被点击过。检查通过后，相关隐私接口会继续调用
-      privacyHandler({
-        buttonId: 'agree-btn',
-        event: 'agree'
+      privacyResolves.forEach(resolve => {
+        resolve({
+          event: 'agree',
+          buttonId: 'agree-btn'
+        })
       })
       privacyResolves.clear()
       this.setData({
