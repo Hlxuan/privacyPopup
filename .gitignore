@@ -1,0 +1,26 @@
+node_modules
+.temp
+.cache
+.history
+dist
+
+# for Mac OS X System Files
+.DS_Store
+Thumbs.db
+
+# for Eclipse
+*.project
+
+# remove SVN
+.svn
+
+# for IDEA
+*/build/*
+.idea/*
+*.iml
+/out/*
+target/
+.idea
+*/target
+*/*.iml
+*.iml
