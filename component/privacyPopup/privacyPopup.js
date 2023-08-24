@@ -93,9 +93,10 @@ Component({
       // 低版本兼容
       if (privacyHandler) {
         // 告知平台用户已经拒绝
-        privacyHandler({
-          buttonId: 'disagree-btn',
-          event: 'disagree'
+        privacyResolves.forEach(resolve => {
+          resolve({
+            event: 'disagree',
+          })
         })
         privacyResolves.clear()
       }
