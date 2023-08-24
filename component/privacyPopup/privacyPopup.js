@@ -75,12 +75,7 @@ Component({
   methods: {
     // 点击遮罩层时触发
     clickoverlay() {
-      // 防止用户点击遮罩层后弹窗关闭
-      if (this.data.showPrivacy) {
-        this.setData({
-          showPrivacy: true,
-        })
-      }
+      this.handleDisagree()
     },
 
     // 跳转至隐私协议页面
