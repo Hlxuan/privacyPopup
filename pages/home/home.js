@@ -57,10 +57,17 @@ Page({
 
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
+  // 用户点击同意按钮后
+  handleAgreePrivacyAuthorization() {
 
-  }
+  },
+
+  handleDisagree() {
+    wx.showToast({
+      title: '没有权限使用隐私相关功能',
+      icon: "none",
+      duration: 2000,
+    })
+  },
+
 })

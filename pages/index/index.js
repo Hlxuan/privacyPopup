@@ -5,7 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    list: [{
+      path: "/pages/home/home",
+      name: "首页",
+    }, {
+      path: "/pages/phoneNumber/phoneNumber",
+      name: "获取手机号",
+    }, {
+      path: "/pages/chooseMedia/chooseMedia",
+      name: "拍摄或从手机相册中选择图片或视频",
+    }]
   },
 
   /**
@@ -57,11 +66,11 @@ Page({
 
   },
 
-  navigator(e){
+  navigator(e) {
     const path = e.currentTarget.dataset.path
     wx.navigateTo({
       url: path,
     })
-  }
+  },
 
 })

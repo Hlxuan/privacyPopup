@@ -1,4 +1,4 @@
-// pages/phoneNumber/phoneNumber.js
+// pages/chooseMedia/chooseMedia.js
 Page({
 
   /**
@@ -65,17 +65,6 @@ Page({
 
   },
 
-  getPhoneNumber(e) {
-    console.log("getPhoneNumber", e)
-    if (e.detail.errMsg) {
-      wx.showToast({
-        title: e.detail.errMsg,
-        icon: "none",
-        duration: 2500,
-      })
-    }
-  },
-
   // 用户点击同意按钮后
   handleAgreePrivacyAuthorization() {
     this.resolvePrivacyAuthorization({
@@ -87,14 +76,33 @@ Page({
   },
 
   handleDisagree() {
-    wx.showToast({
-      title: '没有权限使用该功能',
-      icon: "none",
-      duration: 2000,
-    })
     this.resolvePrivacyAuthorization({
       event: "disagree"
     })
   },
 
+  chooseMedia() {
+    const that = this
+    wx.chooseMedia({
+      count: 9,
+      mediaType: ['image', 'video'],
+      sourceType: ['album', 'camera'],
+      maxDuration: 30,
+      camera: 'back',
+      success(res) {
+        console.log("chooseMedia success =>", res)
+        that.setData({
+          tempFiles: res.tempFiles,
+        })
+      },
+      fail(err) {
+        console.error("chooseMedia fail =>", err)
+        wx.showToast({
+          title: err.errMsg,
+          icon: "none",
+          duration: 2500,
+        })
+      }
+    })
+  },
 })
