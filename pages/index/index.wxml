@@ -1,4 +1,5 @@
 <!--pages/index/index.wxml-->
-<privacy-popup bind:agree="agree" bind:disagree="disagree"></privacy-popup>
 
-<image class="img" src="/images/ilangyue.jpg" mode="widthFix" lazy-load show-menu-by-longpress></image>
+<button type="primary" bind:tap="navigator" data-path="/pages/home/home">首页</button>
+
+<button type="primary" bind:tap="navigator" data-path="/pages/phoneNumber/phoneNumber">获取手机号</button>

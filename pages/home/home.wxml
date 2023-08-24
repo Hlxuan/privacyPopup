@@ -1,0 +1,6 @@
+<!--pages/home/home.wxml-->
+<privacy-popup bind:agree="agree" bind:disagree="disagree"></privacy-popup>
+
+<view style="margin: 20px;">在首页的时候进行授权弹窗，用户授权后在有效期内不会再弹窗，相关隐私接口和组件方可正常使用。</view>
+
+<image class="img" src="/images/ilangyue.jpg" mode="widthFix" lazy-load show-menu-by-longpress></image>

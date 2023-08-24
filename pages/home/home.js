@@ -1,4 +1,4 @@
-// pages/index/index.js
+// pages/home/home.js
 Page({
 
   /**
@@ -57,11 +57,10 @@ Page({
 
   },
 
-  navigator(e){
-    const path = e.currentTarget.dataset.path
-    wx.navigateTo({
-      url: path,
-    })
-  }
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage() {
 
+  }
 })

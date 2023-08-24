@@ -18,7 +18,16 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    // 弹窗开关
+    showPrivacy: {
+      type: Boolean,
+      value: false,
+    },
+    // 是否自动弹窗
+    auto: {
+      type: Boolean,
+      value: true,
+    },
   },
 
   /**
@@ -119,7 +128,7 @@ Component({
     },
 
     popUp() {
-      if (this.data.showPrivacy === false) {
+      if (this.data.showPrivacy === false && this.properties.auto) {
         this.setData({
           showPrivacy: true
         })

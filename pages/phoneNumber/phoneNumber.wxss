@@ -1,0 +1,14 @@
+/* pages/phoneNumber/phoneNumber.wxss */
+page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-area {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  flex: 1;
+  overflow-y: hidden;
+}
