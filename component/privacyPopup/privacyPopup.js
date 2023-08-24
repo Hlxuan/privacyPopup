@@ -42,6 +42,7 @@ Component({
     attached: function () {
 
       privacyHandler = resolve => {
+        this.popUp()
         privacyResolves.add(resolve)
       }
 
@@ -52,7 +53,9 @@ Component({
             console.log("getPrivacySetting success =>", res)
             if (res.needAuthorization) {
               // 需要弹出隐私协议
-              this.popUp()
+              if(this.properties.auto){
+                this.popUp()
+              }
               this.setData({
                 privacyContractName: res.privacyContractName,
               })
@@ -123,7 +126,7 @@ Component({
     },
 
     popUp() {
-      if (this.data.showPrivacy === false && this.properties.auto) {
+      if (this.data.showPrivacy === false) {
         this.setData({
           showPrivacy: true
         })
