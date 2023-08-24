@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/phoneNumber/phoneNumber",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/chooseMedia/chooseMedia"
   ],
   "window": {
     "backgroundTextStyle": "light",

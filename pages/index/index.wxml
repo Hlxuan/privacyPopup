@@ -1,5 +1,5 @@
 <!--pages/index/index.wxml-->
 
-<button type="primary" bind:tap="navigator" data-path="/pages/home/home">首页</button>
-
-<button type="primary" bind:tap="navigator" data-path="/pages/phoneNumber/phoneNumber">获取手机号</button>
+<block wx:for="{{list}}" wx:key="index">
+	<button type="primary" bind:tap="navigator" data-path="{{item.path}}">{{item.name}}</button>
+</block>

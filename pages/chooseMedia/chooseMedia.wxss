@@ -1,0 +1,5 @@
+/* pages/chooseMedia/chooseMedia.wxss */
+image,
+video {
+  width: 100%;
+}
