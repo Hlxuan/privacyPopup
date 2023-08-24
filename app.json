@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/phoneNumber/phoneNumber",
     "pages/home/home",
-    "pages/chooseMedia/chooseMedia"
+    "pages/chooseMedia/chooseMedia",
+    "pages/userProfile/userProfile"
   ],
   "window": {
     "backgroundTextStyle": "light",

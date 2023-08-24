@@ -14,6 +14,9 @@ Page({
     }, {
       path: "/pages/chooseMedia/chooseMedia",
       name: "拍摄或从手机相册中选择图片或视频",
+    }, {
+      path: "/pages/userProfile/userProfile",
+      name: "头像昵称填写",
     }]
   },
 
