@@ -65,6 +65,7 @@ Page({
 
   },
 
+  // 手机号快速验证组件事件回调
   getPhoneNumber(e) {
     console.log("getPhoneNumber", e)
     if (e.detail.errMsg) {
@@ -78,14 +79,14 @@ Page({
 
   // 用户点击同意按钮后
   handleAgreePrivacyAuthorization() {
+    // 用户点击同意后，开发者调用 resolve({ buttonId: 'agree-btn', event: 'agree' })  告知平台用户已经同意，参数传同意按钮的id。为确保用户有同意的操作，基础库在 resolve 被调用后，会去检查对应的同意按钮有没有被点击过。检查通过后，相关隐私接口会继续调用
     this.resolvePrivacyAuthorization({
       buttonId: 'agree-btn',
       event: 'agree'
     })
-    // 用户点击同意后，开发者调用 resolve({ buttonId: 'agree-btn', event: 'agree' })  告知平台用户已经同意，参数传同意按钮的id。为确保用户有同意的操作，基础库在 resolve 被调用后，会去检查对应的同意按钮有没有被点击过。检查通过后，相关隐私接口会继续调用
-    // 用户点击拒绝后，开发者调用 resolve({ event:'disagree' }) 告知平台用户已经拒绝
   },
 
+  // 用户点击拒绝按钮后
   handleDisagree() {
     wx.showToast({
       title: '没有权限使用该功能',
