@@ -4,7 +4,8 @@
     "pages/phoneNumber/phoneNumber",
     "pages/home/home",
     "pages/chooseMedia/chooseMedia",
-    "pages/userProfile/userProfile"
+    "pages/userProfile/userProfile",
+    "pages/writePhotosAlbum/writePhotosAlbum"
   ],
   "window": {
     "backgroundTextStyle": "light",

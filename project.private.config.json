@@ -4,10 +4,24 @@
   "setting": {
     "compileHotReLoad": false
   },
-  "libVersion": "3.0.0",
+  "libVersion": "3.0.1",
   "condition": {
     "miniprogram": {
       "list": [
+        {
+          "name": "拍摄或从手机相册中选择图片或视频",
+          "pathName": "pages/chooseMedia/chooseMedia",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "使用你的相册（仅写入）权限",
+          "pathName": "pages/writePhotosAlbum/writePhotosAlbum",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
         {
           "name": "头像昵称填写",
           "pathName": "pages/userProfile/userProfile",
