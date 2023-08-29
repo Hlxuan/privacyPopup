@@ -17,6 +17,9 @@ Page({
     }, {
       path: "/pages/userProfile/userProfile",
       name: "头像昵称填写",
+    }, {
+      path: "/pages/writePhotosAlbum/writePhotosAlbum",
+      name: "使用你的相册（仅写入）权限",
     }]
   },
 
