@@ -1,7 +1,7 @@
 <!--pages/chooseMedia/chooseMedia.wxml-->
 <privacy-popup bind:agree="handleAgreePrivacyAuthorization" bind:disagree="handleDisagree" auto="{{false}}" showPrivacy="{{showPrivacy}}"></privacy-popup>
 
-<view style="margin: 20px;">调用wx.chooseMedia（这里只是举例，你也可以用其他的API）后，系统会判断是否需要进行隐私授权弹窗，若用户同意则继续执行，在授权有效期内不会再次弹窗；若用户拒绝则直接走fail提示没有权限。</view>
+<view style="margin: 20px;text-align: justify;">调用wx.chooseMedia（这里只是举例，你也可以用其他的API）后，系统会判断是否需要进行隐私授权弹窗，若用户同意则继续执行，在授权有效期内不会再次弹窗；若用户拒绝则直接走fail提示没有权限。</view>
 
 <button type="primary" bind:tap="chooseMedia">拍摄或从手机相册中选择图片或视频</button>
 
