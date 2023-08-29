@@ -1,0 +1,5 @@
+/* pages/writePhotosAlbum/writePhotosAlbum.wxss */
+
+button{
+	margin: 20px auto;
+}
