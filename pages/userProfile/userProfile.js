@@ -71,15 +71,6 @@ Page({
 
   },
 
-  // 用户点击获取头像按钮后
-  handleTouch() {
-    if (this.data.needAuthorization) {
-      this.setData({
-        showPrivacy: true,
-      })
-    }
-  },
-
   // 用户点击input后
   handleTouchInput() {
     if (this.data.needAuthorization) {
