@@ -5,7 +5,7 @@
 
 
 <view>
-  <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" bind:tap="handleTouch">
+  <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
     <image class="avatar" src="{{avatarUrl}}"></image>
   </button>
 </view>
