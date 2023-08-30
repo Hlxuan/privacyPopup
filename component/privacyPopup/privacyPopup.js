@@ -92,6 +92,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    // 离开后触发
+    afterleave() {
+      if (!this.data.agree) {
+        this.handleDisagree()
+      }
+    },
 
     // 跳转至隐私协议页面
     openPrivacyContract() {
@@ -126,6 +132,7 @@ Component({
     handleAgree() {
       console.log("用户同意隐私授权，相关的接口可以正常使用")
       this.triggerEvent("agree")
+      this.data.agree = true
       // 告知平台用户已经同意，参数传同意按钮的id。为确保用户有同意的操作，基础库在 resolve 被调用后，会去检查对应的同意按钮有没有被点击过。检查通过后，相关隐私接口会继续调用
       privacyResolves.forEach(resolve => {
         resolve({
