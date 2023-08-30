@@ -38,6 +38,9 @@ Component({
     miniprogramName: "i朗月", // 小程序的名称
   },
 
+  /**
+   * 组件生命周期
+   */
   lifetimes: {
     attached: function () {
 
@@ -53,7 +56,7 @@ Component({
             console.log("getPrivacySetting success =>", res)
             if (res.needAuthorization) {
               // 需要弹出隐私协议
-              if(this.properties.auto){
+              if (this.properties.auto) {
                 this.popUp()
               }
               this.setData({
@@ -73,13 +76,22 @@ Component({
   },
 
   /**
+   * 组件所在页面的生命周期
+   */
+  pageLifetimes: {
+    // 组件所在的页面被隐藏时执行
+    hide: function () {
+      if (privacyHandler) {
+        // 告知平台用户已经拒绝了
+        this.handleDisagree()
+      }
+    }
+  },
+
+  /**
    * 组件的方法列表
    */
   methods: {
-    // 点击遮罩层时触发
-    clickoverlay() {
-      this.handleDisagree()
-    },
 
     // 跳转至隐私协议页面
     openPrivacyContract() {
