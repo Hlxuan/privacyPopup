@@ -1,5 +1,5 @@
 <!--pages/userProfile/userProfile.wxml-->
-<privacy-popup bind:agree="handleAgreePrivacyAuthorization" bind:disagree="handleDisagree" auto="{{false}}" showPrivacy="{{showPrivacy}}"></privacy-popup>
+<privacy-popup bind:agree="handleAgreePrivacyAuthorization" bind:disagree="handleDisagree" auto="{{false}}" showPrivacy="{{showPrivacy}}" id="privacy-popup-userProfile"></privacy-popup>
 
 <view style="margin: 20px;text-align: justify;">用户点击头像按钮或昵称输入框后，系统会判断是否需要进行隐私授权弹窗，若用户同意则继续执行，在授权有效期内不会再次弹窗；若用户拒绝则直接走fail提示没有权限。</view>
 

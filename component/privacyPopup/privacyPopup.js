@@ -12,6 +12,14 @@ if (wx.onNeedPrivacyAuthorization) {
   })
 }
 
+const closeOtherPagePopUp = (closePopUp) => {
+  closeOtherPagePopUpHooks.forEach(hook => {
+    if (closePopUp !== hook) {
+      hook()
+    }
+  })
+}
+
 Component({
 
   /**
@@ -44,9 +52,15 @@ Component({
   lifetimes: {
     attached: function () {
 
+      const closePopUp = () => {
+        this.disPopUp()
+      }
+
       privacyHandler = resolve => {
         this.popUp()
         privacyResolves.add(resolve)
+        // 额外逻辑：当前页面的隐私弹窗弹起的时候，关掉其他页面的隐私弹窗
+        closeOtherPagePopUp(closePopUp)
       }
 
       // 低版本兼容
@@ -72,7 +86,13 @@ Component({
           }
         })
       }
+
+      this.closePopUp = closePopUp
+      closeOtherPagePopUpHooks.add(this.closePopUp)
     },
+    detached: function () {
+      closeOtherPagePopUpHooks.delete(this.closePopUp)
+    }
   },
 
   /**
@@ -81,10 +101,7 @@ Component({
   pageLifetimes: {
     // 组件所在的页面被隐藏时执行
     hide: function () {
-      if (privacyHandler) {
-        // 告知平台用户已经拒绝了
-        this.handleDisagree()
-      }
+
     }
   },
 
@@ -149,6 +166,15 @@ Component({
         this.setData({
           showPrivacy: true
         })
+        // 低版本兼容
+        if (privacyHandler) {
+          // 把隐私弹窗曝光告知平台
+          privacyResolves.forEach(resolve => {
+            resolve({
+              event: 'exposureAuthorization',
+            })
+          })
+        }
       }
     },
 
@@ -157,6 +183,18 @@ Component({
         this.setData({
           showPrivacy: false
         })
+      }
+    },
+
+    tabBarPageShow() {
+      console.log("tabBarPageShow")
+      if (this.closePopUp) {
+        privacyHandler = resolve => {
+          privacyResolves.add(resolve)
+          this.popUp()
+          // 额外逻辑：当前页面的隐私弹窗弹起的时候，关掉其他页面的隐私弹窗
+          closeOtherPagePopUp(this.closePopUp)
+        }
       }
     },
 
