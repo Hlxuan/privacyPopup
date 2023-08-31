@@ -83,4 +83,9 @@ Page({
     })
   },
 
+  onTabItemTap() {
+    console.log('切换到了获取手机号页面')
+    this.selectComponent('#privacy-popup-phoneNumber').tabBarPageShow()
+  },
+
 })

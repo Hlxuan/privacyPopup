@@ -1,5 +1,5 @@
 <!--pages/index/index.wxml-->
 
 <block wx:for="{{list}}" wx:key="index">
-	<button type="primary" bind:tap="navigator" data-path="{{item.path}}">{{item.name}}</button>
+	<button type="primary" bind:tap="navigator" data-path="{{item.path}}" data-type="{{item.type}}">{{item.name}}</button>
 </block>

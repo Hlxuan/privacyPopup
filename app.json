@@ -13,6 +13,24 @@
     "navigationBarTitleText": "Hlxuan.",
     "navigationBarTextStyle": "black"
   },
+  "tabBar": {
+    "selectedColor": "#10AEFF",
+    "color": "#888888",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/phoneNumber/phoneNumber",
+        "text": "获取手机号"
+      },
+      {
+        "pagePath": "pages/userProfile/userProfile",
+        "text": "头像昵称填写"
+      }
+    ]
+  },
   "lazyCodeLoading": "requiredComponents",
   "style": "v2",
   "sitemapLocation": "sitemap.json",

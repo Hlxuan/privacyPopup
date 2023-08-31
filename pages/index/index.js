@@ -11,12 +11,14 @@ Page({
     }, {
       path: "/pages/phoneNumber/phoneNumber",
       name: "获取手机号",
+      type: "switchTab",
     }, {
       path: "/pages/chooseMedia/chooseMedia",
       name: "拍摄或从手机相册中选择图片或视频",
     }, {
       path: "/pages/userProfile/userProfile",
       name: "头像昵称填写",
+      type: "switchTab",
     }, {
       path: "/pages/writePhotosAlbum/writePhotosAlbum",
       name: "使用你的相册（仅写入）权限",
@@ -74,9 +76,16 @@ Page({
 
   navigator(e) {
     const path = e.currentTarget.dataset.path
-    wx.navigateTo({
-      url: path,
-    })
+    const type = e.currentTarget.dataset.type
+    if (type === "switchTab") {
+      wx.switchTab({
+        url: path,
+      })
+    } else {
+      wx.navigateTo({
+        url: path,
+      })
+    }
   },
 
 })
