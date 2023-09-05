@@ -114,7 +114,7 @@
 
 如果你觉得本组件对你有帮助，欢迎给我打赏一杯咖啡哈~
 
-If you think this document will help you, you can buy the author a cup of coffee~
+If you think this component will help you, you can buy the author a cup of coffee~
 
 
 | 支付宝<br>Alipay                                           | 微信<br>WeChat                                             |
