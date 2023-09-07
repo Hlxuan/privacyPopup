@@ -5,7 +5,8 @@ let closeOtherPagePopUpHooks = new Set()
 
 // 低版本兼容
 if (wx.onNeedPrivacyAuthorization) {
-  wx.onNeedPrivacyAuthorization(resolve => {
+  wx.onNeedPrivacyAuthorization((resolve, eventInfo) => {
+    console.log('触发本次事件的接口是：', eventInfo.referrer)
     if (typeof privacyHandler === 'function') {
       privacyHandler(resolve)
     }
