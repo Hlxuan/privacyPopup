@@ -14,10 +14,12 @@
     - [（三）使用组件](#三使用组件)
       - [属性说明](#属性说明)
       - [Tips](#tips)
-  - [我的网站](#我的网站)
+  - [问题反馈](#问题反馈)
   - [License](#license)
+  - [我的网站](#我的网站)
   - [支持作者](#支持作者)
   - [公众号](#公众号)
+
 
 
 ## 前言
@@ -74,6 +76,7 @@
 ```
 
 2. 页面引入
+
 在页面对应的`.json`文件里面配置：
 ```json
 "usingComponents": {
@@ -100,14 +103,25 @@
 2. 开发者可以通过属性`showPrivacy`自由显示弹窗，“同意”按钮同样可以告知平台用户已经同意授权了。
 
 
-## 我的网站
-[hlxuan的树屋](https://www.hlxuan.top)
+## 问题反馈
 
-[Hlxuan的开放文档](https://doc.hlxuan.top)
+有任何问题，建议通过 [Github issues](https://github.com/Hlxuan/privacyPopup/issues) 反馈或扫码进入「反馈系统」发起反馈。
+
+| 反馈系统网页端                                              | 反馈系统小程序端                                            |
+| ----------------------------------------------------------- | ----------------------------------------------------------- |
+| ![](https://res.hlxuan.top/opendoc/feedback/web/privacy-popup.png) | ![](https://res.hlxuan.top/opendoc/feedback/miniprogram/privacy-popup.png) |
+
+反馈系统网页端：[https://www.hlxuan.top/feedback](https://www.hlxuan.top/feedback/ask.php?section_id=1039)
 
 
 ## License
 [MIT License](LICENSE)
+
+
+## 我的网站
+[hlxuan的树屋](https://www.hlxuan.top)
+
+[Hlxuan的开放文档](https://doc.hlxuan.top)
 
 
 ## 支持作者
