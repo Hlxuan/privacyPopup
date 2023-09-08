@@ -1,0 +1,12 @@
+<!--pages/coupling/index.wxml-->
+<view class="page">
+	<view style="text-align: justify;">基础库 2.32.3 版本起，隐私同意按钮支持与手机号快速验证组件、手机号实时验证组件、获取用户信息组件耦合使用。</view>
+	<view style="text-align: justify;margin-top: 10px;">耦合能力是为了满足让用户勾选同意隐私协议后点击登录按钮这种情况设计的。</view>
+	<view style="text-align: justify;margin-top: 10px;">用户同意按钮后，相关的接口可以正常使用。</view>
+
+	<view class="content">
+		<block wx:for="{{item}}" wx:key="key">
+			<navigator class="link" url="coupling?type={{item.openType}}">demo{{index+1}}：{{item.introduce}}</navigator>
+		</block>
+	</view>
+</view>

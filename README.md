@@ -40,7 +40,8 @@
 |获取手机号|[pages/phoneNumber/phoneNumber](pages/phoneNumber)|点击“点击获取手机号”按钮后，系统会判断是否需要进行隐私授权弹窗，若用户同意则继续执行获取手机号操作，在授权有效期内不会再次弹窗；若用户拒绝则直接走fail提示没有权限，不会影响下次点击，也不会出现点击频繁的问题。|
 |拍摄或从手机相册中选择图片或视频|[pages/chooseMedia/chooseMedia](pages/chooseMedia)|调用`wx.chooseMedia`（这里只是举例，你也可以用其他的API）后，系统会判断是否需要进行隐私授权弹窗，若用户同意则继续执行，在授权有效期内不会再次弹窗；若用户拒绝则直接走fail提示没有权限。|
 |头像昵称填写|[pages/userProfile/userProfile](pages/userProfile)|用户点击头像按钮或昵称输入框后，系统会判断是否需要进行隐私授权弹窗，若用户同意则继续执行，在授权有效期内不会再次弹窗；若用户拒绝则直接走fail提示没有权限。|
-|使用你的相册（仅写入）权限|[pages/writePhotosAlbum/writePhotosAlbum](pages/writePhotosAlbum)|这里会触发两次弹窗：用户之前未授权`scope.writePhotosAlbum`时会触发一次官方的授权弹窗；若用户未进行隐私授权，开发者自定义的授权弹窗又会触发一次。|
+|使用你的相册（仅写入）权限|[pages/writePhotosAlbum/writePhotosAlbum](pages/writePhotosAlbum)|这里会触发两次弹窗：用户之前未授权`scope.writePhotosAlbum`时会触发一次官方的授权弹窗；若用户未进行隐私授权，开发者自定义的授权弹窗会触发一次。|
+|耦合使用|[pages/coupling/coupling](pages/coupling)|**基础库 2.32.3 版本起，**隐私同意按钮支持与手机号快速验证组件、手机号实时验证组件、获取用户信息组件耦合使用。耦合能力是为了满足让用户勾选同意隐私协议后点击登录按钮这种情况设计的。用户同意按钮后，相关的接口可以正常使用。|
 
 持续更新中......
 

@@ -4,10 +4,17 @@
   "setting": {
     "compileHotReLoad": false
   },
-  "libVersion": "3.0.0",
+  "libVersion": "3.0.2",
   "condition": {
     "miniprogram": {
       "list": [
+        {
+          "name": "耦合使用",
+          "pathName": "pages/coupling/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
         {
           "name": "拍摄或从手机相册中选择图片或视频",
           "pathName": "pages/chooseMedia/chooseMedia",

@@ -22,6 +22,9 @@ Page({
     }, {
       path: "/pages/writePhotosAlbum/writePhotosAlbum",
       name: "使用你的相册（仅写入）权限",
+    }, {
+      path: "/pages/coupling/index",
+      name: "耦合使用",
     }]
   },
 
