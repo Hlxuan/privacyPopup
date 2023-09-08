@@ -1,0 +1,65 @@
+/* pages/coupling/coupling.wxss */
+.page {
+	margin: 40px;
+	box-sizing: border-box;
+}
+
+.content {
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	margin-top: 60px;
+}
+
+.logo {
+	border-radius: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	height: 100px;
+	font-size: 30px;
+	color: white;
+	background-color: #10AEFF;
+}
+
+.button {
+	margin: 30px;
+	background-color: #10AEFF !important;
+}
+
+.button_hover {
+	background-color: #30a3dd !important;
+}
+
+.footer {
+	margin-top: 50px;
+	width: 100%;
+	font-size: 13px;
+	position: fixed;
+	bottom: 40px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.checkbox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.checkbox .wx-checkbox-input {
+	border-radius: 50%;
+	width: 16px;
+	height: 16px;
+}
+
+.checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+	background: #10AEFF;
+	color: white;
+	border: #10AEFF 1px solid;
+}
+
+.link {
+	color: #586C94;
+}

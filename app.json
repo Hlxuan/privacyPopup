@@ -5,7 +5,9 @@
     "pages/home/home",
     "pages/chooseMedia/chooseMedia",
     "pages/userProfile/userProfile",
-    "pages/writePhotosAlbum/writePhotosAlbum"
+    "pages/writePhotosAlbum/writePhotosAlbum",
+    "pages/coupling/index",
+    "pages/coupling/coupling"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -16,8 +18,7 @@
   "tabBar": {
     "selectedColor": "#10AEFF",
     "color": "#888888",
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/index/index",
         "text": "首页"
       },
@@ -30,6 +31,9 @@
         "text": "头像昵称填写"
       }
     ]
+  },
+  "usingComponents": {
+    "privacy-popup": "/component/privacyPopup/privacyPopup"
   },
   "lazyCodeLoading": "requiredComponents",
   "style": "v2",

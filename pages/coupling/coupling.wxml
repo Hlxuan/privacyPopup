@@ -1,0 +1,27 @@
+<!--pages/coupling/coupling.wxml-->
+<view class="page">
+
+
+	<view class="content">
+		<view class="logo">i朗月</view>
+	</view>
+
+	<view class="footer">
+		<block wx:if="{{type === 'getPhoneNumber'}}">
+			<button id="agree-btn" type="primary" open-type="{{agree ? '' : ''}}" bindgetphonenumber="handleGetPhoneNumber" bindagreeprivacyauthorization="handleAgreePrivacyAuthorization" bind:tap="loginCheck" class="button" hover-class="button_hover">手机号一键登录</button>
+		</block>
+		<block wx:elif="{{type === 'getRealtimePhoneNumber'}}">
+			<button id="agree-btn" type="primary" open-type="{{agree ? 'getRealtimePhoneNumber|agreePrivacyAuthorization' : ''}}" bindgetrealtimephonenumber="handleGetRealtimePhoneNumber" bindagreeprivacyauthorization="handleAgreePrivacyAuthorization" bind:tap="loginCheck" class="button" hover-class="button_hover">手机号一键登录</button>
+		</block>
+		<block wx:elif="{{type === 'getUserInfo'}}">
+			<button id="agree-btn" type="primary" open-type="{{agree ? 'getUserInfo|agreePrivacyAuthorization' : ''}}" bindgetuserinfo="handleGetUserInfo" bindagreeprivacyauthorization="handleAgreePrivacyAuthorization" bind:tap="loginCheck" class="button" hover-class="button_hover">一键登录</button>
+		</block>
+		<checkbox-group bindchange="checkboxChange">
+			<label class="checkbox">
+				<checkbox value="agree" />
+				<view>我已阅读并同意<text class="link" bind:tap="openPrivacyContract">{{privacyContractName}}</text></view>
+			</label>
+		</checkbox-group>
+	</view>
+
+</view>
