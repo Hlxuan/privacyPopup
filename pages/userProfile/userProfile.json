@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "privacy-popup": "/component/privacyPopup/privacyPopup"
+    "privacy-popup": "/components/privacyPopup/privacyPopup"
   },
   "navigationBarTitleText": "头像昵称填写"
 }

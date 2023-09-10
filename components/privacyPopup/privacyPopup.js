@@ -1,4 +1,4 @@
-// component/privacyPopup/privacyPopup.js
+// components/privacyPopup/privacyPopup.js
 let privacyHandler
 let privacyResolves = new Set()
 let closeOtherPagePopUpHooks = new Set()
