@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "privacy-popup": "/component/privacyPopup/privacyPopup"
+    "privacy-popup": "/components/privacyPopup/privacyPopup"
   },
   "navigationBarTitleText": "使用你的相册（仅写入）权限"
 }

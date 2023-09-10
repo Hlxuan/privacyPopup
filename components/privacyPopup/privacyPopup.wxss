@@ -1,4 +1,4 @@
-/* component/privacyPopup/privacyPopup.wxss */
+/* components/privacyPopup/privacyPopup.wxss */
 
 .detail {
 	padding: 20px;

@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "privacy-popup": "/component/privacyPopup/privacyPopup"
+    "privacy-popup": "/components/privacyPopup/privacyPopup"
   },
   "navigationBarTitleText": "拍摄或从手机相册中选择图片或视频"
 }

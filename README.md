@@ -9,11 +9,16 @@
   - [环境要求](#环境要求)
   - [调试说明](#调试说明)
   - [使用教程](#使用教程)
-    - [（一）引入组件](#一引入组件)
-    - [（二）声明组件](#二声明组件)
-    - [（三）使用组件](#三使用组件)
-      - [属性说明](#属性说明)
-      - [Tips](#tips)
+    - [npm 方式](#npm-方式)
+      - [（一） 项目根目录运行命令](#一-项目根目录运行命令)
+      - [（二）微信开发者工具上方菜单栏 ``工具 -> 构建npm`` 。](#二微信开发者工具上方菜单栏-工具---构建npm-)
+      - [（三）声明组件](#三声明组件)
+    - [源码引入](#源码引入)
+      - [（一）引入组件](#一引入组件)
+      - [（二）声明组件](#二声明组件)
+    - [使用组件](#使用组件)
+        - [属性说明](#属性说明)
+        - [Tips](#tips)
   - [问题反馈](#问题反馈)
   - [License](#license)
   - [我的网站](#我的网站)
@@ -61,18 +66,24 @@
 
 
 ## 使用教程
-> 使用之前需要将项目里的`AppId`换成自己的，目前是只能使用正式号来测试，需要先在小程序后台配置《小程序用户隐私保护指引》，只有在《小程序用户隐私保护指引》里面声明的相关接口才能使用。
 
-### （一）引入组件
-将项目中的`component`目录下的`privacyPopup`文件夹复制到自己的项目`component`文件夹中。
+### npm 方式
 
-### （二）声明组件
+#### （一） 项目根目录运行命令
+```bash
+npm i privacy-popup-miniprogram
+```
+
+#### （二）微信开发者工具上方菜单栏 ``工具 -> 构建npm`` 。
+
+#### （三）声明组件
+
 1. 全局引入
 
 在`app.json`文件中配置：
 ```json
 "usingComponents": {
-  "privacy-popup": "/component/privacyPopup/privacyPopup"
+  "privacy-popup": "privacy-popup-miniprogram/privacyPopup"
 }
 ```
 
@@ -81,17 +92,46 @@
 在页面对应的`.json`文件里面配置：
 ```json
 "usingComponents": {
-  "privacy-popup": "/component/privacyPopup/privacyPopup"
+  "privacy-popup": "privacy-popup-miniprogram/privacyPopup"
 }
 ```
 
-### （三）使用组件
+
+
+### 源码引入
+
+#### （一）引入组件
+将项目中的`components`目录下的`privacyPopup`文件夹复制到自己的项目`components`文件夹中。
+
+#### （二）声明组件
+
+1. 全局引入
+
+在`app.json`文件中配置：
+```json
+"usingComponents": {
+  "privacy-popup": "/components/privacyPopup/privacyPopup"
+}
+```
+
+2. 页面引入
+
+在页面对应的`.json`文件里面配置：
+```json
+"usingComponents": {
+  "privacy-popup": "/components/privacyPopup/privacyPopup"
+}
+```
+
+
+### 使用组件
+
 在`.wxml`页面中添加组件代码：
 ```html
 <privacy-popup bind:agree="handleAgreePrivacyAuthorization" bind:disagree="handleDisagree" auto="{{false}}" showPrivacy="{{showPrivacy}}"></privacy-popup>
 ```
 
-#### 属性说明
+##### 属性说明
 | 属性         | 类型        | 默认值 | 必填 | 说明                                 |
 | ------------ | :---------- | :----- | :--- | :----------------------------------- |
 | bindagree    | eventhandle |       | 否   | 用户点击“同意”按钮时触发             |
@@ -99,7 +139,7 @@
 | auto         | boolean     | true   | 否   | 当系统检测到到用户没有授权时自动弹窗 |
 | showPrivacy  | boolean     | false  | 否   | 显示弹窗                             |
 
-#### Tips
+##### Tips
 1. 如果开发者想在用户使用隐私相关接口时才唤起弹窗，可将属性`auto`设置为`false`，当用户使用隐私相关接口且未授权时，系统会拦截隐私接口的使用并进行弹窗，用户点击“同意”或“拒绝”后隐私相关接口将会继续执行。
 2. 开发者可以通过属性`showPrivacy`自由显示弹窗，“同意”按钮同样可以告知平台用户已经同意授权了。
 
@@ -129,7 +169,7 @@
 
 如果你觉得本组件对你有帮助，欢迎给我打赏一杯咖啡哈~
 
-If you think this component will help you, you can buy the author a cup of coffee~
+If you think this components will help you, you can buy the author a cup of coffee~
 
 
 | 支付宝<br>Alipay                                           | 微信<br>WeChat                                             |

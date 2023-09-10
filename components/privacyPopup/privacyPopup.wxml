@@ -1,4 +1,4 @@
-<!--component/privacyPopup/privacyPopup.wxml-->
+<!--components/privacyPopup/privacyPopup.wxml-->
 <page-container show="{{showPrivacy}}" round bind:clickoverlay="handleDisagree" bind:afterleave="afterleave">
 	<view class="detail">
 		<view class="header">用户隐私保护指引提示</view>
