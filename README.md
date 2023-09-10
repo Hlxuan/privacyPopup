@@ -9,14 +9,16 @@
   - [环境要求](#环境要求)
   - [调试说明](#调试说明)
   - [使用教程](#使用教程)
-    - [npm 方式](#npm-方式)
+    - [npm 方式（待发布）](#npm-方式待发布)
       - [（一） 项目根目录运行命令](#一-项目根目录运行命令)
-      - [（二）微信开发者工具上方菜单栏 ``工具 -> 构建npm`` 。](#二微信开发者工具上方菜单栏-工具---构建npm-)
+      - [（二）微信开发者工具上方菜单栏 `工具 -> 构建npm` 。](#二微信开发者工具上方菜单栏-工具---构建npm-)
       - [（三）声明组件](#三声明组件)
     - [源码引入](#源码引入)
       - [（一）引入组件](#一引入组件)
       - [（二）声明组件](#二声明组件)
     - [使用组件](#使用组件)
+      - [npm引入](#npm引入)
+      - [源码引入](#源码引入-1)
         - [属性说明](#属性说明)
         - [Tips](#tips)
   - [问题反馈](#问题反馈)
@@ -31,7 +33,7 @@
 
 微信团队于2023年8月14日发布公告[《关于小程序隐私保护指引设置的公告》](https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&announce_id=11691660367cfUvX&version=&lang=zh_CN&token=)，在小程序内调用与隐私相关的接口或组件，需要先在后台完善和更新《小程序用户隐私保护指引》，完善后还需要开发者在小程序内弹窗获取用户授权，用户授权同意后方可调用隐私相关接口或组件。
 
-我封装了一个隐私授权弹窗，大家可以参考（**非官方**），部分代码参考了官方Demo。
+我封装了一个隐私授权弹窗（**非官方**），大家可以参考或者直接引入在自己的代码里面使用，部分代码参考了官方Demo。
 
 
 ## 效果预览
@@ -52,7 +54,7 @@
 
 
 ## 环境要求
-小程序基础库 **2.32.3** 及以上（本组件已经进行了低版本兼容处理）
+小程序基础库 **2.32.3** 及以上。
 
 低于 2.32.3 版本的基础库未集成隐私相关功能，也不会拦截隐私接口调用。
 
@@ -60,7 +62,7 @@
 ## 调试说明
 1、在2023年9月15日前，开发者可以在`app.json`文件里面配置`"__usePrivacyCheck__": true`方可启用隐私相关功能。
 
-2、在2023年9月15日之后，不论 app.json 中是否有配置` __usePrivacyCheck__`，隐私相关功能都会启用。
+2、在2023年9月15日之后，不论 `app.json` 文件里面是否有配置` __usePrivacyCheck__`，隐私相关功能都会启用。
 
 更多可参考“小程序隐私协议开发指南”（内含官方DEMO）：[https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html](https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html)
 
@@ -69,12 +71,15 @@
 
 ### npm 方式（待发布）
 
-#### （一） 项目根目录运行命令
+#### （一） 项目根目录运行命令安装
 ```bash
 npm i privacy-popup-miniprogram
 ```
 
-#### （二）微信开发者工具上方菜单栏 ``工具 -> 构建npm`` 。
+
+#### （二）微信开发者工具上方菜单栏 `工具 -> 构建npm` 。
+![](https://images.hlxuan.top/2023/09/bd558f376e6a20e0.png)
+
 
 #### （三）声明组件
 
@@ -95,7 +100,6 @@ npm i privacy-popup-miniprogram
   "privacy-popup": "privacy-popup-miniprogram/privacyPopup"
 }
 ```
-
 
 
 ### 源码引入
@@ -126,7 +130,28 @@ npm i privacy-popup-miniprogram
 
 ### 使用组件
 
+1. 修改小程序名称
+
+#### npm引入
+
+前往 `/node_modules/privacy-popup-miniprogram/components/privacyPopup/privacyPopup.js`文件，修改`data`里面的`miniprogramName`的值为自己的小程序名称。
+![](https://images.hlxuan.top/2023/09/9628caa87687da6f.png)
+
+修改后保存，前往微信开发者工具上方菜单栏 `工具 -> 构建npm` 。
+![](https://images.hlxuan.top/2023/09/bd558f376e6a20e0.png)
+
+
+#### 源码引入
+
+前往 `/components/privacyPopup/privacyPopup.js`文件，修改`data`里面的`miniprogramName`的值为自己的小程序名称。
+![](https://images.hlxuan.top/2023/09/a827f2c8fdce5bae.png)
+
+
+
+2. 页面添加代码
+
 在`.wxml`页面中添加组件代码：
+
 ```html
 <privacy-popup bind:agree="handleAgreePrivacyAuthorization" bind:disagree="handleDisagree" auto="{{false}}" showPrivacy="{{showPrivacy}}"></privacy-popup>
 ```
@@ -172,8 +197,8 @@ npm i privacy-popup-miniprogram
 If you think this components will help you, you can buy the author a cup of coffee~
 
 
-| 支付宝<br>Alipay                                           | 微信<br>WeChat                                             |
-| ---------------------------------------------------------- | ---------------------------------------------------------- |
+| 支付宝<br>Alipay                                             | 微信<br>WeChat                                               |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | ![](https://res.hlxuan.top/opendoc/support-author/alipay.png) | ![](https://res.hlxuan.top/opendoc/support-author/weixin.png) |
 
 
