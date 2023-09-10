@@ -1,8 +1,9 @@
 {
   "name": "privacy-popup-miniprogram",
   "version": "1.0.0",
-  "description": "在小程序内调用与隐私相关的接口或组件，需要先在后台完善和更新《小程序用户隐私保护指引》，完善后需要开发者在小程序弹窗授权，用户同意后方可调用隐私相关接口或组件。",
-  "main": ".cz-config.js",
+  "description": "微信小程序隐私授权弹窗组件",
+  "main": "app.js",
+  "miniprogram": "components/privacyPopup",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
