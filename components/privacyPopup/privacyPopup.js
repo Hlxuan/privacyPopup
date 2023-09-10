@@ -44,7 +44,7 @@ Component({
    */
   data: {
     showPrivacy: false, // 显示弹窗（默认关闭）
-    miniprogramName: "i朗月", // 小程序的名称
+    miniprogramName: "小程序名称", // 小程序的名称
   },
 
   /**
