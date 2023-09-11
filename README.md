@@ -2,6 +2,7 @@
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/Hlxuan/privacyPopup) ![GitHub issues](https://img.shields.io/github/issues/Hlxuan/privacyPopup) ![GitHub Stars](https://img.shields.io/github/stars/Hlxuan/privacyPopup)
 
 
+
 - [微信小程序隐私授权弹窗](#微信小程序隐私授权弹窗)
   - [前言](#前言)
   - [效果预览](#效果预览)
@@ -9,8 +10,8 @@
   - [环境要求](#环境要求)
   - [调试说明](#调试说明)
   - [使用教程](#使用教程)
-    - [npm 方式（待发布）](#npm-方式待发布)
-      - [（一） 项目根目录运行命令](#一-项目根目录运行命令)
+    - [npm 方式](#npm-方式)
+      - [（一） 项目根目录运行命令安装](#一-项目根目录运行命令安装)
       - [（二）微信开发者工具上方菜单栏 `工具 -> 构建npm` 。](#二微信开发者工具上方菜单栏-工具---构建npm-)
       - [（三）声明组件](#三声明组件)
     - [源码引入](#源码引入)
@@ -69,7 +70,7 @@
 
 ## 使用教程
 
-### npm 方式（待发布）
+### npm 方式
 
 #### （一） 项目根目录运行命令安装
 ```bash
