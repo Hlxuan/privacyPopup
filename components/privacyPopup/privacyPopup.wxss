@@ -44,35 +44,35 @@
 	transition: all 300ms;
 }
 
-.privacyPopup .header {
+.privacyPopup .privacyPopup-header {
 	font-size: 18px;
 	text-align: center;
 	margin-bottom: 20px;
 	font-weight: bold;
 }
 
-.privacyPopup .content {
+.privacyPopup .privacyPopup-content {
 	text-align: justify;
 	line-height: 1.5;
 }
 
-.privacyPopup .content .p {
+.privacyPopup .privacyPopup-content .privacyPopup-p {
 	margin-top: 5px;
 }
 
-.privacyPopup .link {
+.privacyPopup .privacyPopup-link {
 	color: #586C94;
 }
 
-.privacyPopup .button_area {
+.privacyPopup .privacyPopup-buttonArea {
 	display: flex;
 	margin: 30px auto;
 }
 
-.privacyPopup .button_area .item {
+.privacyPopup .privacyPopup-buttonArea .privacyPopup-item {
 	width: calc(100%/2);
 }
 
-.privacyPopup .button_area .item button {
+.privacyPopup .privacyPopup-buttonArea .privacyPopup-item button {
 	width: 80%;
 }
