@@ -1,49 +1,78 @@
 /* components/privacyPopup/privacyPopup.wxss */
 
-.detail-mask{
+.privacyPopup-show {
+	opacity: 1;
+	visibility: visible;
+	transition: all 300ms;
+}
+
+.privacyPopup-hide {
+	opacity: 0;
+	visibility: hidden;
+	transition: all 300ms;
+}
+
+.privacyPopup-mask {
+	background-color: rgba(0, 0, 0, 0.8);
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
+	z-index: 9999;
 }
 
-.detail {
-	position: relative;
-	padding: 20px;
+.privacyPopup {
+	position: fixed;
+	left: 0;
+	background-color: white;
 	width: 100%;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	padding: 20px;
 	box-sizing: border-box;
+	z-index: 9999;
 }
 
-.detail .header {
+.privacyPopup-show .privacyPopup {
+	bottom: 0;
+	transition: all 300ms;
+}
+
+.privacyPopup-hide .privacyPopup {
+	bottom: -500px;
+	transition: all 300ms;
+}
+
+.privacyPopup .header {
 	font-size: 18px;
 	text-align: center;
 	margin-bottom: 20px;
 	font-weight: bold;
 }
 
-.detail .content {
+.privacyPopup .content {
 	text-align: justify;
 	line-height: 1.5;
 }
 
-.detail .content .p {
+.privacyPopup .content .p {
 	margin-top: 5px;
 }
 
-.detail .link {
+.privacyPopup .link {
 	color: #586C94;
 }
 
-.detail .button_area {
+.privacyPopup .button_area {
 	display: flex;
 	margin: 30px auto;
 }
 
-.detail .button_area .item {
+.privacyPopup .button_area .item {
 	width: calc(100%/2);
 }
 
-.detail .button_area .item button {
+.privacyPopup .button_area .item button {
 	width: 80%;
 }
