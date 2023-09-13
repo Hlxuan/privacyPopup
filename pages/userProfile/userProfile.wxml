@@ -10,5 +10,5 @@
   </button>
 </view>
 <view class="input" catch:touchstart="handleTouchInput">
-  <input type="nickname" class="weui-input" placeholder="请输入昵称" focus="{{focus}}" />
+  <input type="nickname" class="weui-input" placeholder="请输入昵称" focus="{{focus}}" bindblur="bindblur" />
 </view>
