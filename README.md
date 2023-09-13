@@ -154,20 +154,20 @@ npm i privacy-popup-miniprogram
 在`.wxml`页面中添加组件代码：
 
 ```html
-<privacy-popup bind:agree="handleAgreePrivacyAuthorization" bind:disagree="handleDisagree" auto="{{false}}" showPrivacy="{{showPrivacy}}"></privacy-popup>
+<privacy-popup bind:agree="handleAgreePrivacyAuthorization" bind:disagree="handleDisagree" auto="{{false}}" show="{{showPrivacy}}"></privacy-popup>
 ```
 
 ##### 属性说明
 | 属性         | 类型        | 默认值 | 必填 | 说明                                 |
 | ------------ | :---------- | :----- | :--- | :----------------------------------- |
 | auto         | boolean     | true   | 否   | 当系统检测到到用户没有授权时自动弹窗 |
-| showPrivacy  | boolean     | false  | 否   | 显示弹窗                             |
+| show  | boolean     | false  | 否   | 显示弹窗                             |
 | bindagree | eventhandle |  | 否 | 用户同意时触发，用户之前已经同意或基础库版本**2.32.3以下**默认触发 |
 | binddisagree | eventhandle |  | 否 | 用户拒绝时触发 |
 
 ##### Tips
 1. 如果开发者想在用户使用隐私相关接口时才唤起弹窗，可将属性`auto`设置为`false`，当用户使用隐私相关接口且未授权时，系统会拦截隐私接口的使用并进行弹窗，用户点击“同意”或“拒绝”后隐私相关接口将会继续执行。
-2. 开发者可以通过属性`showPrivacy`自由显示弹窗，“同意”按钮同样可以告知平台用户已经同意授权了。
+2. 开发者可以通过属性`show`自由显示弹窗，“同意”按钮同样可以告知平台用户已经同意授权了。
 
 
 ## 问题反馈

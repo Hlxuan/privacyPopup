@@ -1,20 +1,19 @@
 <!--components/privacyPopup/privacyPopup.wxml-->
-<view class="{{showPrivacy ? 'privacyPopup-show' : 'privacyPopup-hide'}}">
-	<view class="privacyPopup-mask">
-		<view class="privacyPopup">
-			<view class="privacyPopup-header">用户隐私保护指引提示</view>
-			<view class="privacyPopup-content">
-				<view class="privacyPopup-p">感谢你使用{{miniprogramName}}。</view>
-				<view class="privacyPopup-p">在你使用{{miniprogramName}}服务之前，请仔细阅读<text bind:tap="openPrivacyContract" class="privacyPopup-link">{{privacyContractName}}。</text></view>
-				<view class="privacyPopup-p">如你同意{{privacyContractName}}，请点击“同意”开始使用{{miniprogramName}}。</view>
+<view wx:if="{{showPopup}}">
+	<view class="privacyPopup-mask {{showPrivacy ? 'privacyPopup-show' : 'privacyPopup-hide'}}"></view>
+	<view class="privacyPopup {{showPrivacy ? 'privacyPopup-show' : 'privacyPopup-hide'}}">
+		<view class="privacyPopup-header">用户隐私保护指引提示</view>
+		<view class="privacyPopup-content">
+			<view class="privacyPopup-p">感谢你使用{{miniprogramName}}。</view>
+			<view class="privacyPopup-p">在你使用{{miniprogramName}}服务之前，请仔细阅读<text bind:tap="openPrivacyContract" class="privacyPopup-link">{{privacyContractName}}。</text></view>
+			<view class="privacyPopup-p">如你同意{{privacyContractName}}，请点击“同意”开始使用{{miniprogramName}}。</view>
+		</view>
+		<view class="privacyPopup-buttonArea">
+			<view class="privacyPopup-item">
+				<button type="default" id="disagree-btn" bindtap="handleDisagree">拒绝</button>
 			</view>
-			<view class="privacyPopup-buttonArea">
-				<view class="privacyPopup-item">
-					<button type="default" id="disagree-btn" bindtap="handleDisagree">拒绝</button>
-				</view>
-				<view class="privacyPopup-item">
-					<button type="primary" id="agree-btn" open-type="agreePrivacyAuthorization" bindagreeprivacyauthorization="handleAgree">同意</button>
-				</view>
+			<view class="privacyPopup-item">
+				<button type="primary" id="agree-btn" open-type="agreePrivacyAuthorization" bindagreeprivacyauthorization="handleAgree">同意</button>
 			</view>
 		</view>
 	</view>

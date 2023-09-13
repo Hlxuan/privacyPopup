@@ -1,5 +1,5 @@
 <!--pages/writePhotosAlbum/writePhotosAlbum.wxml-->
-<privacy-popup bind:agree="handleAgreePrivacyAuthorization" bind:disagree="handleDisagree" auto="{{false}}" showPrivacy="{{showPrivacy}}"></privacy-popup>
+<privacy-popup bind:agree="handleAgreePrivacyAuthorization" bind:disagree="handleDisagree" auto="{{false}}"></privacy-popup>
 
 <view style="margin: 20px;text-align: justify;">这里会触发两次弹窗：用户之前未授权`scope.writePhotosAlbum`时会触发一次官方的授权弹窗；若用户未进行隐私授权，开发者自定义的授权弹窗又会触发一次。</view>
 

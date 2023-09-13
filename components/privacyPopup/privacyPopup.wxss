@@ -2,13 +2,11 @@
 
 .privacyPopup-show {
 	opacity: 1;
-	visibility: visible;
 	transition: all 300ms;
 }
 
 .privacyPopup-hide {
 	opacity: 0;
-	visibility: hidden;
 	transition: all 300ms;
 }
 
@@ -34,12 +32,12 @@
 	z-index: 9999;
 }
 
-.privacyPopup-show .privacyPopup {
+.privacyPopup.privacyPopup-show {
 	bottom: 0;
 	transition: all 300ms;
 }
 
-.privacyPopup-hide .privacyPopup {
+.privacyPopup.privacyPopup-hide {
 	bottom: -500px;
 	transition: all 300ms;
 }
