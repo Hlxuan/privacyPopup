@@ -28,9 +28,10 @@ Component({
    */
   properties: {
     // 弹窗开关
-    showPrivacy: {
+    show: {
       type: Boolean,
       value: false,
+      observer: "showPopup",
     },
     // 是否自动弹窗
     auto: {
@@ -43,6 +44,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    showPopup: false, // 显示弹窗（默认关闭）
     showPrivacy: false, // 显示弹窗（默认关闭）
     miniprogramName: "小程序名称", // 小程序的名称
   },
@@ -164,11 +166,27 @@ Component({
       this.disPopUp()
     },
 
+    showPopup() {
+      console.log("popup")
+      if (this.data.showPopup === false) {
+        this.popUp()
+      } else if (this.data.showPopup === true) {
+        this.disPopUp()
+      }
+    },
+
+    // 显示弹窗
     popUp() {
       if (this.data.showPrivacy === false) {
         this.setData({
-          showPrivacy: true
+          showPopup: true
         })
+        let timer = setTimeout(() => {
+          this.setData({
+            showPrivacy: true,
+          })
+          clearTimeout(timer)
+        }, 100)
         // 低版本兼容
         if (privacyHandler) {
           // 把隐私弹窗曝光告知平台
@@ -181,14 +199,23 @@ Component({
       }
     },
 
+    // 隐藏弹窗
     disPopUp() {
       if (this.data.showPrivacy === true) {
         this.setData({
           showPrivacy: false
         })
+        this.data.show = false
+        let timer = setTimeout(() => {
+          this.setData({
+            showPopup: false,
+          })
+          clearTimeout(timer)
+        }, 300)
       }
     },
 
+    // tabBar页面切换时
     tabBarPageShow() {
       console.log("tabBarPageShow")
       if (this.closePopUp) {
