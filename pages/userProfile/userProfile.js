@@ -114,6 +114,14 @@ Page({
     })
   },
 
+  bindblur() {
+    if (this.data.focus === true) {
+      this.setData({
+        focus: false,
+      })
+    }
+  },
+
   onTabItemTap() {
     console.log('切换到了头像昵称填写页面')
     this.selectComponent('#privacy-popup-userProfile').tabBarPageShow()
