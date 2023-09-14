@@ -47,6 +47,7 @@ Component({
     showPopup: false, // 显示弹窗（默认关闭）
     showPrivacy: false, // 显示弹窗（默认关闭）
     miniprogramName: "小程序名称", // 小程序的名称
+    read: false, // 是否正在阅读隐私协议
   },
 
   /**
@@ -104,9 +105,23 @@ Component({
    * 组件所在页面的生命周期
    */
   pageLifetimes: {
+    // 组件所在的页面被展示时执行
+    show: function () {
+      // 复原 read 属性
+      if (this.data.read === true) {
+        this.data.read === false
+      }
+    },
+
     // 组件所在的页面被隐藏时执行
     hide: function () {
-
+      // 如果用户不是在阅读隐私协议
+      if (this.data.read === false) {
+        // 判断目前是否有接口拦截
+        if (privacyResolves.size != 0) {
+          this.handleDisagree()
+        }
+      }
     }
   },
 
@@ -125,6 +140,7 @@ Component({
     openPrivacyContract() {
       wx.openPrivacyContract({
         success: res => {
+          this.data.read = true
           console.log('openPrivacyContract success')
         },
         fail: res => {
