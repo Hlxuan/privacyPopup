@@ -199,7 +199,7 @@ npm i privacy-popup-miniprogram
 | ----------------------------------------------------------- | ----------------------------------------------------------- |
 | ![](https://res.hlxuan.top/opendoc/feedback/web/privacy-popup.png) | ![](https://res.hlxuan.top/opendoc/feedback/miniprogram/privacy-popup.png) |
 
-反馈系统网页端：[https://www.hlxuan.top/feedback](https://www.hlxuan.top/feedback/ask.php?section_id=1039)
+反馈系统网页端：[https://www.hlxuan.top/feedback](https://www.hlxuan.top/feedback/add?section_id=1039)
 
 
 ## License
