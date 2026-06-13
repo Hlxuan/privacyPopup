@@ -24,9 +24,7 @@
         - [Tips](#tips)
   - [问题反馈](#问题反馈)
   - [License](#license)
-  - [我的网站](#我的网站)
-  - [支持作者](#支持作者)
-  - [公众号](#公众号)
+  - [支持项目](#支持项目)
 
 
 
@@ -63,14 +61,14 @@
 
 
 ## 示例 
-|场景|页面路径|说明|
-|---|---|---|
-|首页弹窗|[pages/home/home](pages/home)|在首页的时候进行授权弹窗，用户授权后在有效期内不会再弹窗，相关隐私接口和组件方可正常使用。|
-|获取手机号|[pages/phoneNumber/phoneNumber](pages/phoneNumber)|点击“点击获取手机号”按钮后，系统会判断是否需要进行隐私授权弹窗，若用户同意则继续执行获取手机号操作，在授权有效期内不会再次弹窗；若用户拒绝则直接走fail提示没有权限，不会影响下次点击，也不会出现点击频繁的问题。|
-|拍摄或从手机相册中选择图片或视频|[pages/chooseMedia/chooseMedia](pages/chooseMedia)|调用`wx.chooseMedia`（这里只是举例，你也可以用其他的API）后，系统会判断是否需要进行隐私授权弹窗，若用户同意则继续执行，在授权有效期内不会再次弹窗；若用户拒绝则直接走fail提示没有权限。|
-|头像昵称填写|[pages/userProfile/userProfile](pages/userProfile)|用户点击头像按钮或昵称输入框后，系统会判断是否需要进行隐私授权弹窗，若用户同意则继续执行，在授权有效期内不会再次弹窗；若用户拒绝则直接走fail提示没有权限。|
-|使用你的相册（仅写入）权限|[pages/writePhotosAlbum/writePhotosAlbum](pages/writePhotosAlbum)|这里会触发两次弹窗：用户之前未授权`scope.writePhotosAlbum`时会触发一次官方的授权弹窗；若用户未进行隐私授权，开发者自定义的授权弹窗会触发一次。|
-|耦合使用|[pages/coupling/coupling](pages/coupling)|**基础库 2.32.3 版本起，**隐私同意按钮支持与手机号快速验证组件、手机号实时验证组件、获取用户信息组件耦合使用。耦合能力是为了满足让用户勾选同意隐私协议后点击登录按钮这种情况设计的。用户同意按钮后，相关的接口可以正常使用。|
+| 场景                             | 页面路径                                                          | 说明                                                                                                                                                                                                                         |
+| -------------------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 首页弹窗                         | [pages/home/home](pages/home)                                     | 在首页的时候进行授权弹窗，用户授权后在有效期内不会再弹窗，相关隐私接口和组件方可正常使用。                                                                                                                                   |
+| 获取手机号                       | [pages/phoneNumber/phoneNumber](pages/phoneNumber)                | 点击“点击获取手机号”按钮后，系统会判断是否需要进行隐私授权弹窗，若用户同意则继续执行获取手机号操作，在授权有效期内不会再次弹窗；若用户拒绝则直接走fail提示没有权限，不会影响下次点击，也不会出现点击频繁的问题。             |
+| 拍摄或从手机相册中选择图片或视频 | [pages/chooseMedia/chooseMedia](pages/chooseMedia)                | 调用`wx.chooseMedia`（这里只是举例，你也可以用其他的API）后，系统会判断是否需要进行隐私授权弹窗，若用户同意则继续执行，在授权有效期内不会再次弹窗；若用户拒绝则直接走fail提示没有权限。                                      |
+| 头像昵称填写                     | [pages/userProfile/userProfile](pages/userProfile)                | 用户点击头像按钮或昵称输入框后，系统会判断是否需要进行隐私授权弹窗，若用户同意则继续执行，在授权有效期内不会再次弹窗；若用户拒绝则直接走fail提示没有权限。                                                                   |
+| 使用你的相册（仅写入）权限       | [pages/writePhotosAlbum/writePhotosAlbum](pages/writePhotosAlbum) | 这里会触发两次弹窗：用户之前未授权`scope.writePhotosAlbum`时会触发一次官方的授权弹窗；若用户未进行隐私授权，开发者自定义的授权弹窗会触发一次。                                                                               |
+| 耦合使用                         | [pages/coupling/coupling](pages/coupling)                         | **基础库 2.32.3 版本起，**隐私同意按钮支持与手机号快速验证组件、手机号实时验证组件、获取用户信息组件耦合使用。耦合能力是为了满足让用户勾选同意隐私协议后点击登录按钮这种情况设计的。用户同意按钮后，相关的接口可以正常使用。 |
 
 持续更新中......
 
@@ -179,12 +177,12 @@ npm i privacy-popup-miniprogram
 ```
 
 ##### 属性说明
-| 属性         | 类型        | 默认值 | 必填 | 说明                                 |
-| ------------ | :---------- | :----- | :--- | :----------------------------------- |
-| auto         | boolean     | true   | 否   | 当系统检测到到用户没有授权时自动弹窗 |
-| show  | boolean     | false  | 否   | 显示弹窗                             |
-| bindagree | eventhandle |  | 否 | 用户同意时触发，用户之前已经同意或基础库版本**2.32.3以下**默认触发 |
-| binddisagree | eventhandle |  | 否 | 用户拒绝时触发 |
+| 属性         | 类型        | 默认值 | 必填 | 说明                                                               |
+| ------------ | :---------- | :----- | :--- | :----------------------------------------------------------------- |
+| auto         | boolean     | true   | 否   | 当系统检测到到用户没有授权时自动弹窗                               |
+| show         | boolean     | false  | 否   | 显示弹窗                                                           |
+| bindagree    | eventhandle |        | 否   | 用户同意时触发，用户之前已经同意或基础库版本**2.32.3以下**默认触发 |
+| binddisagree | eventhandle |        | 否   | 用户拒绝时触发                                                     |
 
 ##### Tips
 1. 如果开发者想在用户使用隐私相关接口时才唤起弹窗，可将属性`auto`设置为`false`，当用户使用隐私相关接口且未授权时，系统会拦截隐私接口的使用并进行弹窗，用户点击“同意”或“拒绝”后隐私相关接口将会继续执行。
@@ -195,9 +193,9 @@ npm i privacy-popup-miniprogram
 
 有任何问题，建议通过 [Github issues](https://github.com/Hlxuan/privacyPopup/issues) 反馈或扫码进入「反馈系统」发起反馈。
 
-| 反馈系统网页端                                              | 反馈系统小程序端                                            |
-| ----------------------------------------------------------- | ----------------------------------------------------------- |
-| ![](https://res.hlxuan.top/opendoc/feedback/web/privacy-popup.png) | ![](https://res.hlxuan.top/opendoc/feedback/miniprogram/privacy-popup.png) |
+| 反馈系统网页端                                                      | 反馈系统小程序端                                                            |
+| ------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| ![](https://res.hlxuan.top/opendocs/feedback/web/privacy-popup.png) | ![](https://res.hlxuan.top/opendocs/feedback/miniprogram/privacy-popup.png) |
 
 反馈系统网页端：[https://www.hlxuan.top/feedback](https://www.hlxuan.top/feedback/add?section_id=1039)
 
@@ -206,24 +204,8 @@ npm i privacy-popup-miniprogram
 [MIT License](LICENSE)
 
 
-## 我的网站
-[hlxuan的树屋](https://www.hlxuan.top)
+## 支持项目
 
-[Hlxuan的开放文档](https://doc.hlxuan.top)
+如果您觉得这个项目对你有帮助，[欢迎给我打赏一杯咖啡哈～](https://docs.hlxuan.top/support-author.html)
 
-
-## 支持作者
-
-如果你觉得本组件对你有帮助，欢迎给我打赏一杯咖啡哈~
-
-If you think this components will help you, you can buy the author a cup of coffee~
-
-
-| 支付宝<br>Alipay                                             | 微信<br>WeChat                                               |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![](https://res.hlxuan.top/opendoc/support-author/alipay.png) | ![](https://res.hlxuan.top/opendoc/support-author/weixin.png) |
-
-
-## 公众号
-微信搜索「**黄朗轩**」关注我的公众号，我们一起探索～
-![](https://res.hlxuan.top/opendoc/gzh-banner.png)
+If you think this project will help you, [you can buy the author a cup of coffee~](https://docs.hlxuan.top/support-author.html)
